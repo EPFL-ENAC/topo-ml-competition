@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="triangle.ico"> -->
+	<title>CrossLoc | Scalable Aerial Localization Assisted by Multimodal Synthetic Data</title>
+	<meta name="keywords" content="visual localization, sim-to-real, benchmark datasets, multitask, computer vision, vision, EPFL, Swiss Federal Institute of Technology, Lausanne">
+	<meta name="description" content="Scalable Aerial Localization Assisted by Multimodal Synthetic Data EPFL. We propose new perspectives on reducing the need for real data for aerial localization leveraging synthetic data and cross-modal visual representations.">
+	<!--meta name="google-site-verification" content="tBb4aimY-zxYS_s_z86g6faxMX2G_I_Wp_kzbF3U_RM" /-->
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+	
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+	<!-- Icons -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+	
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/index.css" />
+
+	<link type="text/css" rel="stylesheet" href="css/cvpr-video.css"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1E96WH8L1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T1E96WH8L1');
+</script>
+
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div style=""  id='particles-js'>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar fixed-nav">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a class="logo-text" href="//crossloc.github.io">CrossLoc</a>
+						<a href="http://topo.epfl.ch/">
+								<img class="logo" src="./img/EPFL_Logo_Digital_RGB_PROD.png" alt="logo">
+								<img class="logo-alt" src="./img/EPFL_Logo_Digital_WHITE_PROD.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#datasets">Datasets </a></li>
+					<li><a href="#submission">Submission</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+					<li><a href="#team">Team</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
+					<li><a href="#ref">References</a></li>
+					<!-- <li class="has-dropdown"><a href="#blog">Blog</a> -->
+						<!-- <ul class="dropdown"> -->
+							<!-- <li><a href="blog-single.html">blog post</a></li> -->
+						<!-- </ul> -->
+					<!-- </li> -->
+					<!-- <li><a href="#contact">Contact</a></li> -->
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+	
+	
+	
+	<div id="home" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+			<h1 align=center style='margin-top:24.0pt;text-align:center;mso-pagination:
+widow-orphan;page-break-after:auto'><a name="_kwi9kkt1cuz"></a><b
+style='mso-bidi-font-weight:normal'><u><span lang=EN-GB style='font-size:23.0pt;
+line-height:115%;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="image6.png" o:spid="_x0000_i1037" type="#_x0000_t75"
+ style='width:471.75pt;height:268.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="word_files/image001.png" o:title="" cropleft="422f"/>
+</v:shape><![endif]--><![if !vml]><img width=629 height=358
+src="word_files/image002.gif" v:shapes="image6.png"><![endif]></span></u></b><span
+lang=EN-GB style='font-size:9.0pt;line-height:115%'><o:p></o:p></span></h1>
+
+<h1 style='margin-top:24.0pt;text-align:justify;mso-pagination:widow-orphan;
+page-break-after:auto'><a name="_innrorj2v7jr"></a><b style='mso-bidi-font-weight:
+normal'><u><span lang=EN-GB style='font-size:23.0pt;line-height:115%'>No GPS no
+problem!</span></u></b><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:23.0pt;line-height:115%'> Democratising aerial navigation via
+robust and data-scalable computer vision.<o:p></o:p></span></b></h1>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:justify'><i style='mso-bidi-font-style:normal'><span
+lang=EN-GB>Do you believe like us in pushing CV advances in the real world?
+Will you be a champion in proving CV advances benefits to the world of
+aviation? Then join us and earn:<o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:justify'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-GB style='font-family:"Arial Unicode MS";mso-fareast-font-family:"Arial Unicode MS";
+mso-bidi-font-family:"Arial Unicode MS"'>&#8594; Respect and fame:</span></b><span
+lang=EN-GB> As you, your team product or company being the leader in the real-world
+challenge of aerial navigation. <span class=SpellE>Leaderboard</span> open for
+all with no restrictions. </span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:justify'><span lang=EN-GB style='font-family:
+"Arial Unicode MS";mso-fareast-font-family:"Arial Unicode MS";mso-bidi-font-family:
+"Arial Unicode MS"'>&#8594; </span><b style='mso-bidi-font-weight:normal'><span
+lang=EN-GB>The open data champions prize:</span></b><span lang=EN-GB> </span><b
+style='mso-bidi-font-weight:normal'><u><span lang=EN-GB style='font-size:12.0pt;
+line-height:115%;color:red'>10 000 CHF</span></u></b><span lang=EN-GB> (<u>8
+000 CHF</u> for 1st place and <u>2 000 CHF</u> for second) for the champions on
+our <span class=SpellE>leaderboard</span> that choose to share to the world
+(open source) their solution (git and model explanation report) for the benefit
+of all.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:justify'><span lang=EN-GB style='font-size:
+10.5pt;line-height:115%;font-family:Roboto;mso-fareast-font-family:Roboto;
+mso-bidi-font-family:Roboto;background:white;mso-highlight:white'><span
+style='mso-spacerun:yes'>   </span>The value of research shines best when it
+touches everyday life. </span><span lang=EN-GB>Today's scientific journals in
+Computer Vision (CV) provide exciting developments that promise a future in
+which CV systems can <span class=SpellE>automise</span> navigation, control of
+ground and aerial vehicles. <span class=GramE>Thus</span> a lasting impact on
+our daily lives beyond the annals of academic journals. Traditionally, however,
+academic advancements are focusing on developing theoretical solutions
+optimised to perform over a given data domain. This being a set of camera
+images collected at specific geographic location, trajectory path, camera type,
+weather, season, date, etc. Those algorithms can rarely be proven to generalise
+to real-world large-scale applications. Those would require an economically
+prohibitive amount of training data describing all possible situations and
+locations in time and space. This poses a challenge to democratisation and
+realisation of the autonomous/GPS-free promise. As rising countermeasure,
+synthetic data and rendering engines have attempted to fill in the data hunger
+of the CV models (<a href="https://github.com/TOPO-EPFL/TOPO-DataGen"><span
+style='color:#1155CC'>TOPO-<span class=SpellE>DataGen</span></span></a> <span
+class=GramE>open source</span> example for air nav domain). Two paths exist in bridging
+the gap between the real scarce data and abundant synthetic: </span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l3 level1 lfo7'><![if !supportLists]><span lang=EN-GB><span
+style='mso-list:Ignore'>A)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-GB>Either making the synthetic
+data highly representative of reality or </span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-align:justify;text-indent:-18.0pt;mso-list:l3 level1 lfo7'><![if !supportLists]><span
+lang=EN-GB><span style='mso-list:Ignore'>B)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-GB>Making models robust to
+sim-to-real traverse/gap</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=EN-GB
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image5.png" o:spid="_x0000_i1036"
+ type="#_x0000_t75" style='width:394.5pt;height:256.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="word_files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=526 height=342
+src="word_files/image004.jpg" v:shapes="image5.png"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><i style='mso-bidi-font-style:
+normal'><span lang=EN-GB>Through the Looking-Glass, Alice Pushes Through the
+Mirror (between real and synthetic data)<o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:justify'><span lang=EN-GB>We believe that the
+real-challenge of today's CV is to develop and validate a design philosophy for
+algorithms that can work <b style='mso-bidi-font-weight:normal'>robustly</b>
+and in an <b style='mso-bidi-font-weight:normal'>economically/data scalable
+way.</b> In other words:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l4 level1 lfo1'><![if !supportLists]><span
+lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-GB>Being able to train with
+limited or even no real/domain specific data (<b style='mso-bidi-font-weight:
+normal'>zero-shot</b>). Those leveraging synthetic data generated by <span
+class=GramE>open source</span> tools such as <a
+href="https://github.com/TOPO-EPFL/TOPO-DataGen"><span style='color:#1155CC'>TOPO-<span
+class=SpellE>DataGen</span></span></a>.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo1'><![if !supportLists]><span
+lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-GB>Capable of producing accurate
+output with trustworthy <b style='mso-bidi-font-weight:normal'>uncertainty
+statements</b> that can capture accurately the prediction errors. [4]</span></p>
+
+<p class=MsoNormal style='margin-top:24.0pt'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-GB style='font-size:17.0pt;line-height:115%'>The
+challenge, should you choose to accept it.<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:justify'><span lang=EN-GB>Today aerial
+autonomous systems for navigation and control are heavily dependent on the
+robustness of GNSS reception. Lack of thereof (terrain, weather, or adversarial
+spoofing) can lead to loss of autonomous system absolute orientation. This in
+the medium to long run (error will always accumulate in time with dead <span
+class=SpellE>reconing</span>) can be unsafe for operation, especially on beyond
+<span class=GramE>line of sight</span> missions. Despite significant progress
+in Computer Vision, most learning-based approaches target at a single domain
+and require a dense database of geo-tagged images to function well. Or at least
+a calibration set of real images taken closely from the domain of [1,2]
+operation. Several industry attempts are made in the same direction, however,
+understandably without an official benchmark or validation.</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=EN-GB
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image10.png" o:spid="_x0000_i1035"
+ type="#_x0000_t75" style='width:501pt;height:120pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="word_files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=668 height=160
+src="word_files/image006.gif" v:shapes="image10.png"><![endif]></span><span
+lang=EN-GB style='font-size:13.0pt;line-height:115%'>We challenge you to prove
+your approach can work <b style='mso-bidi-font-weight:normal'>robustly</b> and
+in an <b style='mso-bidi-font-weight:normal'>economically/data scalable way</b>.
+To do this by proving you can compute accurate 6D camera poses with known
+uncertainty on our challenge validation dataset. To do this by having only
+access to:<o:p></o:p></span></p>
+
+	</div>		
+	</div>
+	
+	
+	<div id="datasets" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">The Datasets…</h2>     
+				</div>
+
+							<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB
+							style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image12.png" o:spid="_x0000_i1034"
+							 type="#_x0000_t75" style='width:519pt;height:435pt;visibility:visible;
+							 mso-wrap-style:square'>
+							 <v:imagedata src="word_files/image007.png" o:title=""/>
+							</v:shape><![endif]--><![if !vml]><img border=0 width=692 height=580
+							src="word_files/image008.gif" v:shapes="image12.png"><![endif]></span></p>
+
+							<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+							12.0pt;margin-left:36.0pt;text-align:justify;text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+							lang=EN-GB><span style='mso-list:Ignore'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+							</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+							lang=EN-GB>Training–navigation (In-place <span class=GramE>LHS)*</span></span></b><span
+							lang=EN-GB> A large dataset consisting of synthetic rendered images with ground
+							truth poses, matching scene coordinates, depth, <span class=SpellE>normals</span>,
+							semantics for the navigation area of interest. You can observe an example
+							below:</span></p>
+
+							<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB
+							style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image13.png" o:spid="_x0000_i1033"
+							 type="#_x0000_t75" style='width:452.25pt;height:231pt;visibility:visible;
+							 mso-wrap-style:square'>
+							 <v:imagedata src="word_files/image009.png" o:title=""/>
+							</v:shape><![endif]--><![if !vml]><img border=0 width=603 height=308
+							src="word_files/image010.gif" v:shapes="image13.png"><![endif]></span></p>
+
+							<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+							12.0pt;margin-left:36.0pt;text-align:justify;text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+							lang=EN-GB><span style='mso-list:Ignore'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+							</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+							lang=EN-GB>Matching pairs (Out-of-place)</span></b><span lang=EN-GB> A subset
+							of synthetic and real image pairs taken from similar-looking places but of
+							geographically different locations as an aid with the sim-to-real transfer and
+							uncertainty estimation calibration.</span></p>
+
+							<p class=MsoNormal><span lang=EN-GB style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+							 id="image4.png" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:926.25pt;
+							 height:410.25pt;visibility:visible;mso-wrap-style:square'>
+							 <v:imagedata src="word_files/image011.png" o:title=""/>
+							</v:shape><![endif]--><![if !vml]><img border=0 width=1235 height=547
+							src="word_files/image012.gif" v:shapes="image4.png"><![endif]></span></p>
+
+							<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+							12.0pt;margin-left:36.0pt;text-align:justify'><span lang=EN-GB>All of the
+							matching pairs have as well related ground-truth matching modalities generated
+							by <a href="https://github.com/TOPO-EPFL/TOPO-DataGen"><span style='color:#1155CC'>TOPO-<span
+							class=SpellE>DataGen</span>.</span></a></span></p>
+
+							<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+							12.0pt;margin-left:36.0pt;text-align:justify'><span lang=EN-GB
+							style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image9.png" o:spid="_x0000_i1031"
+							 type="#_x0000_t75" style='width:1288.5pt;height:308.25pt;visibility:visible;
+							 mso-wrap-style:square'>
+							 <v:imagedata src="word_files/image013.png" o:title=""/>
+							</v:shape><![endif]--><![if !vml]><img border=0 width=1718 height=411
+							src="word_files/image014.gif" v:shapes="image9.png"><![endif]></span><span
+							lang=EN-GB><span style='mso-spacerun:yes'> </span></span></p>
+
+							<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+							12.0pt;margin-left:36.0pt;text-align:justify;text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><b
+							style='mso-bidi-font-weight:normal'><span lang=EN-GB><span style='mso-list:
+							Ignore'>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span></b><![endif]><b
+							style='mso-bidi-font-weight:normal'><span lang=EN-GB>Validation Area (In-place)</span></b><span
+							lang=EN-GB> A validation dataset consisting of real images on which you will be
+							marked on our automated <span class=SpellE>leaderboard</span> against all
+							fellow participants.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+							<p class=MsoNormal><span lang=EN-GB>*Notation explanation:</span></p>
+
+							<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo9'><![if !supportLists]><span
+							lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+							</span></span></span><![endif]><span lang=EN-GB>What is “LHS”?</span></p>
+
+							<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l2 level2 lfo9'><![if !supportLists]><span
+							lang=EN-GB><span style='mso-list:Ignore'>&#9675;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+							</span></span></span><![endif]><span lang=EN-GB style='color:#0E101A'>LHS
+							stands for the </span><span lang=EN-GB><a
+							href="https://en.wikipedia.org/wiki/Latin_hypercube_sampling"><span
+							style='color:#4A6EE0'>Latin Hypercube Sampling</span></a><span
+							style='color:#0E101A'>, a statistical method for efficiently sampling values
+							from a multidimensional distribution. We use the LHS method to generate the
+							synthetic data viewpoints (i.e., the 6D camera poses) within the area of
+							interest. This ensures that the generated data points are randomly distributed
+							and span over the benchmark region densely enough.</span></span></p>
+
+							<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo9'><![if !supportLists]><span
+							lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+							</span></span></span><![endif]><span lang=EN-GB>What is the purpose of having
+							“In-place” and “Out-of-place” datasets?</span></p>
+
+							<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l2 level2 lfo9'><![if !supportLists]><span
+							lang=EN-GB><span style='mso-list:Ignore'>&#9675;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+							</span></span></span><![endif]><span lang=EN-GB style='color:#0E101A'>Intuitively,
+							the &quot;In-place&quot; area is where the final localization validation is
+							carried out. To truly highlight the model's robustness and generalisation
+							capability, the real images of In-place areas are with hidden meta data as
+							metric datasets. We only provide <b style='mso-bidi-font-weight:normal'>synthetic
+							data</b> of the In-place site for model training.</span></p>
+
+							<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l2 level2 lfo9'><![if !supportLists]><span
+							lang=EN-GB><span style='mso-list:Ignore'>&#9675;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+							</span></span></span><![endif]><span lang=EN-GB style='color:#0E101A'>We assume
+							that the model can access some <b style='mso-bidi-font-weight:normal'>real
+							&amp; synthetic data</b> from the neighbouring areas, dubbed “Out-of-place.”
+							This way, you can train the model to generalise from sim to real and <b
+							style='mso-bidi-font-weight:normal'>avoid overfitting</b> the In-place real
+							data.</span></p>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<h2><a name="_38s4y98fb17t"></a><span lang=EN-GB>Links</span></h2>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal><span lang=EN-GB>The data splits and link to the
+							repositories:</span></p>
+
+							<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<table class=a border=1 cellspacing=0 cellpadding=0 width=681 style='border-collapse:
+							 collapse;mso-table-layout-alt:fixed;border:none;mso-border-alt:solid gray .75pt;
+							 mso-yfti-tbllook:1536;mso-padding-alt:5.0pt 5.0pt 5.0pt 5.0pt;mso-border-insideh:
+							 .75pt solid gray;mso-border-insidev:.75pt solid gray'>
+							 <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:25.75pt'>
+							  <td width=149 valign=top style='width:111.75pt;border:solid gray 1.0pt;
+							  mso-border-alt:solid gray .75pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center'><b
+							  style='mso-bidi-font-weight:normal'><span lang=EN-GB>Data set name</span></b></p>
+							  </td>
+							  <td width=109 valign=top style='width:81.75pt;border:solid gray 1.0pt;
+							  border-left:none;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center'><b
+							  style='mso-bidi-font-weight:normal'><span lang=EN-GB>Type</span></b></p>
+							  </td>
+							  <td width=117 valign=top style='width:87.75pt;border:solid gray 1.0pt;
+							  border-left:none;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center'><b
+							  style='mso-bidi-font-weight:normal'><span lang=EN-GB>Number of images</span></b></p>
+							  </td>
+							  <td width=306 valign=top style='width:229.5pt;border:solid gray 1.0pt;
+							  border-left:none;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center'><b
+							  style='mso-bidi-font-weight:normal'><span lang=EN-GB>Link</span></b></p>
+							  </td>
+							 </tr>
+							 <tr style='mso-yfti-irow:1;height:25.75pt'>
+							  <td width=149 valign=top style='width:111.75pt;border:solid gray 1.0pt;
+							  border-top:none;mso-border-top-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB
+							  style='font-size:11.5pt;line-height:115%;color:#1D1C1D'>Training-navigation
+							  (In-place LHS)</span></p>
+							  </td>
+							  <td width=109 valign=top style='width:81.75pt;border-top:none;border-left:
+							  none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;mso-border-top-alt:
+							  solid gray .75pt;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB>zero-shot</span></p>
+							  </td>
+							  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+							  none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;mso-border-top-alt:
+							  solid gray .75pt;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB><span style='mso-spacerun:yes'> </span>15000</span></p>
+							  </td>
+							  <td width=306 rowspan=2 valign=top style='width:229.5pt;border-top:none;
+							  border-left:none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;
+							  mso-border-top-alt:solid gray .75pt;mso-border-left-alt:solid gray .75pt;
+							  mso-border-alt:solid gray .75pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB><a
+							  href="https://zenodo.org/record/6650721/files/train.zip?download=1"><span
+							  style='color:#1155CC'>train.zip</span></a></span></p>
+							  </td>
+							 </tr>
+							 <tr style='mso-yfti-irow:2;height:25.75pt'>
+							  <td width=149 valign=top style='width:111.75pt;border:solid gray 1.0pt;
+							  border-top:none;mso-border-top-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB>Matching pairs (Out-of-place)</span></p>
+							  </td>
+							  <td width=109 valign=top style='width:81.75pt;border-top:none;border-left:
+							  none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;mso-border-top-alt:
+							  solid gray .75pt;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB>Sim-to-Real</span></p>
+							  </td>
+							  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+							  none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;mso-border-top-alt:
+							  solid gray .75pt;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB>1197</span></p>
+							  </td>
+							 </tr>
+							 <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes;height:25.75pt'>
+							  <td width=149 valign=top style='width:111.75pt;border:solid gray 1.0pt;
+							  border-top:none;mso-border-top-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB>Validation (In-place)</span></p>
+							  </td>
+							  <td width=109 valign=top style='width:81.75pt;border-top:none;border-left:
+							  none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;mso-border-top-alt:
+							  solid gray .75pt;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB>Validation</span></p>
+							  </td>
+							  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+							  none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;mso-border-top-alt:
+							  solid gray .75pt;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB>300</span></p>
+							  </td>
+							  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+							  none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;mso-border-top-alt:
+							  solid gray .75pt;mso-border-left-alt:solid gray .75pt;mso-border-alt:solid gray .75pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:25.75pt'>
+							  <p class=MsoNormal align=center style='text-align:center;mso-pagination:none'><span
+							  lang=EN-GB><a
+							  href="https://zenodo.org/record/6669020/files/validation.zip?download=1"><span
+							  style='color:#1155CC'>validation.zip</span></a></span></p>
+							  </td>
+							 </tr>
+							</table>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<h2><a name="_gk8zpzl0nmgg"></a><span lang=EN-GB>Coordinates system (position)</span></h2>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal style='text-align:justify'><span lang=EN-GB>In order to
+							facilitate the dataset processing, all coordinates (expressed in ECEF
+							coordinates system) of the provided datasets have been reduced by subtracting
+							all from a reference amount (ECEF column <span class=GramE>1<span
+							style='mso-spacerun:yes'>  </span>bellow</span> - “local reference”). In the
+							second column an example with current image position is shown in ECEF with the
+							corresponding “relative/reduced” coordinate with respect to local reference. In
+							the final column one can see the corresponding WGS 84 coordinates for the
+							“current position”.<span style='mso-spacerun:yes'>  </span>All final submission
+							of results must be provided in WGS 84 format for final marking.</span></p>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<div align=center>
+
+							<table class=a0 border=1 cellspacing=0 cellpadding=0 width=857
+							 style='border-collapse:collapse;mso-table-layout-alt:fixed;border:none;
+							 mso-border-alt:solid black 1.0pt;mso-yfti-tbllook:1536;mso-padding-alt:5.0pt 5.0pt 5.0pt 5.0pt;
+							 mso-border-insideh:1.0pt solid black;mso-border-insidev:1.0pt solid black'>
+							 <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:93.15pt'>
+							  <td width=72 valign=top style='width:54.0pt;border-top:white;border-left:
+							  white;border-bottom:black;border-right:#0E101A;border-style:solid;border-width:
+							  1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:93.15pt'>
+							  <p class=MsoNormal style='line-height:normal;mso-pagination:none'><span
+							  lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+							  </td>
+							  <td width=213 valign=top style='width:159.75pt;border:solid #0E101A 1.0pt;
+							  border-left:none;mso-border-left-alt:solid #0E101A 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+							  height:93.15pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'>ECEF</span></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'><a href="https://epsg.io/4978"><span
+							  style='color:#1155CC'>Epsg:4978</span></a> <b style='mso-bidi-font-weight:
+							  normal'>local reference</b></span><b style='mso-bidi-font-weight:normal'><span
+							  lang=EN-GB><o:p></o:p></span></b></p>
+							  </td>
+							  <td width=208 valign=top style='width:156.0pt;border:solid black 1.0pt;
+							  border-left:none;mso-border-left-alt:solid #0E101A 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+							  height:93.15pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'>ECEF</span></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'><a href="https://epsg.io/4978"><span
+							  style='color:#1155CC'>Epsg:4978</span></a> <b style='mso-bidi-font-weight:
+							  normal'>current position</b></span><b style='mso-bidi-font-weight:normal'><span
+							  lang=EN-GB><o:p></o:p></span></b></p>
+							  </td>
+							  <td width=129 valign=top style='width:96.75pt;border:solid black 1.0pt;
+							  border-left:none;mso-border-left-alt:solid #0E101A 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+							  height:93.15pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'>ECEF</span></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'><a href="https://epsg.io/4978"><span
+							  style='color:#1155CC'>Epsg:4978</span></a><span style='mso-spacerun:yes'> 
+							  </span><b style='mso-bidi-font-weight:normal'>relative/reduced</b> position
+							  W.R. to local ref.</span></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'><span style='mso-spacerun:yes'> </span>as provided
+							  in dataset/meta data</span></p>
+							  </td>
+							  <td width=100 valign=top style='width:75.0pt;border:solid black 1.0pt;
+							  border-left:none;mso-border-left-alt:solid #0E101A 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+							  height:93.15pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+							  </td>
+							  <td width=135 valign=top style='width:101.25pt;border:solid black 1.0pt;
+							  border-left:none;mso-border-left-alt:solid #0E101A 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+							  height:93.15pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>WGS 84</span></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><b style='mso-bidi-font-weight:normal'><span
+							  lang=EN-GB style='color:black;mso-color-alt:windowtext'>current position</span></b></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'><a href="https://epsg.io/4979"><span
+							  style='color:#1155CC'>epsg:4979</span></a></span></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:135%;
+							  mso-pagination:none;background:white'><span lang=EN-GB style='color:black;
+							  mso-color-alt:windowtext'><a
+							  href="https://www.oc.nps.edu/oc2902w/coord/llhxyz.htm"><span
+							  style='color:#1155CC'>Latitude/Longitude/Height &lt;--&gt; ECEF via J-Script
+							  (nps.edu)</span></a></span></p>
+							  </td>
+							 </tr>
+							 <tr style='mso-yfti-irow:1;height:24.95pt'>
+							  <td width=72 valign=top style='width:54.0pt;border:solid black 1.0pt;
+							  border-top:none;mso-border-top-alt:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+							  height:24.95pt'>
+							  <p class=MsoNormal style='line-height:normal;mso-pagination:none'><span
+							  lang=EN-GB>X [m]</span></p>
+							  </td>
+							  <td width=213 valign=top style='width:159.75pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid #0E101A 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.95pt'>
+							  <p class=MsoNormal align=center style='text-align:center;text-indent:36.0pt'><span
+							  lang=EN-GB style='font-size:11.5pt;line-height:115%;color:#1D1C1D;background:
+							  white;mso-highlight:white'>4366983.403482145</span></p>
+							  </td>
+							  <td width=208 valign=top style='width:156.0pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid #0E101A 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.95pt'>
+							  <p class=MsoNormal align=center style='text-align:center;text-indent:36.0pt'><span
+							  lang=EN-GB style='font-size:11.5pt;line-height:115%;color:#1D1C1D;background:
+							  white;mso-highlight:white'>4366993.403482145</span></p>
+							  </td>
+							  <td width=129 valign=top style='width:96.75pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.95pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>10</span></p>
+							  </td>
+							  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.95pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>Latitude [<span class=SpellE>deg</span>]
+							  N</span></p>
+							  </td>
+							  <td width=135 valign=top style='width:101.25pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.95pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>46.53561</span></p>
+							  </td>
+							 </tr>
+							 <tr style='mso-yfti-irow:2'>
+							  <td width=72 valign=top style='width:54.0pt;border:solid black 1.0pt;
+							  border-top:none;mso-border-top-alt:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal style='line-height:normal;mso-pagination:none'><span
+							  lang=EN-GB>Y [m]</span></p>
+							  </td>
+							  <td width=213 valign=top style='width:159.75pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;text-indent:36.0pt'><span
+							  lang=EN-GB style='font-size:11.5pt;line-height:115%;color:#1D1C1D;background:
+							  white;mso-highlight:white'>500859.6799224778</span></p>
+							  </td>
+							  <td width=208 valign=top style='width:156.0pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;text-indent:36.0pt'><span
+							  lang=EN-GB style='font-size:11.5pt;line-height:115%;color:#1D1C1D;background:
+							  white;mso-highlight:white'>500879.6799224778</span></p>
+							  </td>
+							  <td width=129 valign=top style='width:96.75pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>20</span></p>
+							  </td>
+							  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>Longitude [<span class=SpellE>deg</span>]
+							  E</span></p>
+							  </td>
+							  <td width=135 valign=top style='width:101.25pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>6.54304</span></p>
+							  </td>
+							 </tr>
+							 <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
+							  <td width=72 valign=top style='width:54.0pt;border:solid black 1.0pt;
+							  border-top:none;mso-border-top-alt:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal style='line-height:normal;mso-pagination:none'><span
+							  lang=EN-GB>Z [m]</span></p>
+							  </td>
+							  <td width=213 valign=top style='width:159.75pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;text-indent:36.0pt'><span
+							  lang=EN-GB style='font-size:11.5pt;line-height:115%;color:#1D1C1D;background:
+							  white;mso-highlight:white'>4606715.270014311</span></p>
+							  </td>
+							  <td width=208 valign=top style='width:156.0pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;text-indent:36.0pt'><span
+							  lang=EN-GB style='font-size:11.5pt;line-height:115%;color:#1D1C1D;background:
+							  white;mso-highlight:white'>4606745.270014311</span></p>
+							  </td>
+							  <td width=129 valign=top style='width:96.75pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>30</span></p>
+							  </td>
+							  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>Height [m]</span></p>
+							  </td>
+							  <td width=135 valign=top style='width:101.25pt;border-top:none;border-left:
+							  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+							  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+							  padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+							  <p class=MsoNormal align=center style='text-align:center;line-height:normal;
+							  mso-pagination:none'><span lang=EN-GB>470.2</span></p>
+							  </td>
+							 </tr>
+							</table>
+
+							</div>
+
+							<h2><a name="_xu8c68fs5ld"></a><span lang=EN-GB style='color:white;mso-color-alt:
+							windowtext'>Coordinates system (orientation)</span></h2>
+
+							<p class=MsoNormal><span lang=EN-GB>Bellow you can see an example of the
+							orientation reference coordinate system. North being the reference for Yaw and
+							horizontal for Pitch and Roll.</span></p>
+
+							<p class=MsoNormal><span lang=EN-GB style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+							 id="image8.png" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:474.75pt;
+							 height:333.75pt;visibility:visible;mso-wrap-style:square'>
+							 <v:imagedata src="word_files/image015.png" o:title=""/>
+							</v:shape><![endif]--><![if !vml]><img border=0 width=633 height=445
+							src="word_files/image016.gif" v:shapes="image8.png"><![endif]></span></p>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+							<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+				</div>
+		<!-- /Container -->
+	</div>		
+	</div>
+	
+	
+		
+	<div id="submission" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Submission</h2>     
+				</div>
+
+					<h2><a name="_3erzrtnrxukq"></a><span lang=EN-GB>Format</span></h2>
+
+					<p class=MsoNormal style='text-align:justify'><span lang=EN-GB>To submit your
+					results to the <span class=SpellE>leaderboard</span> you must construct a
+					submission zip file containing a CSV file that must have the following columns
+					(without column names):</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>1 :</span>
+					estimate X coordinate (longitude) [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>2 :</span>
+					estimate Y coordinate (latitude) [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>3 :</span>
+					estimate Altitude [metres]</span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>4 :</span>
+					estimate Azimuth [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>5 :</span>
+					estimate Tilt [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>6 :</span>
+					estimate Roll [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>7 :</span>
+					uncertainty X coordinate (longitude) [<span class=SpellE>deg</span>], </span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>8 :</span>
+					uncertainty<span style='mso-spacerun:yes'>  </span>Y coordinate (latitude) [<span
+					class=SpellE>deg</span>], </span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>9 :</span>
+					uncertainty Altitude [metres], </span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>10 :</span>
+					uncertainty Azimuth [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>11 :</span>
+					uncertainty Tilt [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+					margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+					lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+					</span></span></span><![endif]><span lang=EN-GB>Column <span class=GramE>12 :</span>
+					uncertainty Roll [<span class=SpellE>deg</span>]</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:36.0pt'><u><span lang=EN-GB style='font-size:13.0pt;
+					line-height:115%'>Notes: <o:p></o:p></span></u></p>
+
+					<ol style='margin-top:0cm' start=1 type=1>
+					 <li class=MsoNormal style='margin-top:12.0pt;mso-list:l1 level1 lfo10'><span
+						 lang=EN-GB>Uncertainty: (1 sigma - standard Uncertainty [3]) </span></li>
+					 <li class=MsoNormal style='mso-list:l1 level1 lfo10'><span lang=EN-GB>Position:
+						 Coordinates are in WGS84 coordinate system and height in [metres].</span></li>
+					</ol>
+
+					<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+					<h2 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+					name="_xw9dwes0i6ak"></a><span lang=EN-GB>Evaluation <span class=SpellE>Criterias</span></span></h2>
+
+					<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+					<p class=MsoNormal style='text-align:justify'><span lang=EN-GB>Accuracy on
+					positioning (70 %), Providing a meaningful uncertainty statement (30 %). If
+					Uncertainty statement is provided, competitor will be judged on the median of
+					their <span style='background:white;mso-highlight:white'>lowest uncertainty 5 %
+					image. We do this to motivate accurate uncertainty estimates. 5 % of estimates
+					is considered acceptable as for absolute updates are required in only in
+					relatively low frequency (<span class=SpellE>conisdering</span> good dead <span
+					class=SpellE>reconing</span> scheme is present).<o:p></o:p></span></span></p>
+
+					<p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+					 id="image3.png" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:489.75pt;
+					 height:126pt;visibility:visible;mso-wrap-style:square'>
+					 <v:imagedata src="word_files/image017.png" o:title=""/>
+					</v:shape><![endif]--><![if !vml]><img border=0 width=653 height=168
+					src="word_files/image018.gif" v:shapes="image3.png"><![endif]></span></b><b
+					style='mso-bidi-font-weight:normal'><span lang=EN-GB style='font-size:13.0pt;
+					line-height:115%'><o:p></o:p></span></b></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%'>Error calculation metric - Mean
+					Average Error (MAE)<o:p></o:p></span></b></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+					 id="image11.png" o:spid="_x0000_i1028" type="#_x0000_t75" style='width:570.75pt;
+					 height:256.5pt;visibility:visible;mso-wrap-style:square'>
+					 <v:imagedata src="word_files/image019.png" o:title=""/>
+					</v:shape><![endif]--><![if !vml]><img border=0 width=761 height=342
+					src="word_files/image020.jpg" v:shapes="image11.png"><![endif]></span></b><b
+					style='mso-bidi-font-weight:normal'><span lang=EN-GB style='font-size:13.0pt;
+					line-height:115%'><o:p></o:p></span></b></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+					<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+					style='font-size:13.0pt;line-height:115%'>Uncertainty quality metric - <span
+					class=SpellE>En</span> [4]<o:p></o:p></span></b></p>
+
+					<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+					margin-bottom:12.0pt;margin-left:0cm;text-align:center'><b style='mso-bidi-font-weight:
+					normal'><span lang=EN-GB style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+					 id="image7.png" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:295.5pt;
+					 height:233.25pt;visibility:visible;mso-wrap-style:square'>
+					 <v:imagedata src="word_files/image021.png" o:title=""/>
+					</v:shape><![endif]--><![if !vml]><img border=0 width=394 height=311
+					src="word_files/image022.gif" v:shapes="image7.png"><![endif]></span><span
+					lang=EN-GB><o:p></o:p></span></b></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm'><span lang=EN-GB>An Uncertain statement is useful if:</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:18.0pt'><span lang=EN-GB>a)</span><span lang=EN-GB
+					style='font-size:7.0pt;line-height:115%'><span style='mso-spacerun:yes'> 
+					</span><span style='mso-tab-count:1'>  </span></span><span lang=EN-GB>It can
+					help one filter systematically images below a certain error threshold</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:18.0pt'><span lang=EN-GB>b)</span><span lang=EN-GB
+					style='font-size:7.0pt;line-height:115%'> <span style='mso-tab-count:1'>   </span></span><span
+					lang=EN-GB>Capture within it the actual magnitude of the errors</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm'><span lang=EN-GB>Criteria for uncertainty statement? An
+					evaluation parameter inspired by the coordinate metrology standards - [4]</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm'><span lang=EN-GB>Where for each single estimation of
+					each pose <span class=SpellE>En</span> value should be estimated</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm'><span lang=EN-GB style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+					 id="image2.png" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:705pt;
+					 height:62.25pt;visibility:visible;mso-wrap-style:square'>
+					 <v:imagedata src="word_files/image023.png" o:title=""/>
+					</v:shape><![endif]--><![if !vml]><img border=0 width=940 height=83
+					src="word_files/image024.gif" v:shapes="image2.png"><![endif]></span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm;text-align:justify'><span class=SpellE><span lang=EN-GB>Ymodel</span></span><span
+					lang=EN-GB> applied = Prediction (Neural Network)</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm;text-align:justify'><span class=SpellE><span lang=EN-GB>Yval</span></span><span
+					lang=EN-GB> = Reference (ground truth)</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm;text-align:justify'><span class=SpellE><span lang=EN-GB>Uval</span></span><span
+					lang=EN-GB> = Uncertainty of reference (RTK GNSS fusion) = 2.2 cm – 1 sigma and
+					1.1 <span class=SpellE>deg</span> - 1 sigma</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm;text-align:justify'><span class=SpellE><span lang=EN-GB>Umodel</span></span><span
+					lang=EN-GB> applied = Uncertainty of Neural Network – 1sigma</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm;text-align:justify'><span lang=EN-GB>Once <span
+					class=SpellE>En</span> value is calculated for each pose/uncertainty pairs a
+					mean of those values is taken for each <span class=SpellE>DoF</span>. The final
+					<span class=SpellE>En</span> value is then calculated. It can be used to judge
+					the <span class=SpellE>overal</span> pose uncertainty quality. If <span
+					class=SpellE>En</span> is in the provided range as shown below it will be
+					considered useful (points gained). The provided range is given as such to
+					ensure U captures errors without <span class=SpellE>unecesearly</span>
+					enlarging the Uncertainty bounds.</span></p>
+
+					<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+					12.0pt;margin-left:0cm'><span lang=EN-GB style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+					 id="image1.png" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:705pt;
+					 height:62.25pt;visibility:visible;mso-wrap-style:square'>
+					 <v:imagedata src="word_files/image025.png" o:title=""/>
+					</v:shape><![endif]--><![if !vml]><img border=0 width=940 height=83
+					src="word_files/image026.gif" v:shapes="image1.png"><![endif]></span><b
+					style='mso-bidi-font-weight:normal'><span lang=EN-GB style='font-size:13.0pt;
+					line-height:115%'><o:p></o:p></span></b></p>
+				</div>
+				
+								<h1 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+				name="_gv2keeptj86t"></a><b style='mso-bidi-font-weight:normal'><span
+				lang=EN-GB style='font-size:23.0pt;line-height:115%'>Terms and Conditions</span></b></h1>
+
+				<h2 style='margin-top:24.0pt;text-align:justify'><a name="_2pfyie4sesp4"></a><span
+				lang=EN-GB>Data</span></h2>
+
+				<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+				0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+				-18.0pt;mso-list:l8 level1 lfo8'><![if !supportLists]><span lang=EN-GB><span
+				style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>The datasets and competition
+				should be cited <span class=SpellE>acordingly</span> in any further use or
+				mention.</span></p>
+
+				<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+				margin-left:36.0pt;text-align:justify;text-indent:-18.0pt;mso-list:l8 level1 lfo8'><![if !supportLists]><span
+				lang=EN-GB><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>The data should not be used for
+				any other <span class=SpellE>purpouces</span> than academic or industrial
+				research.</span></p>
+
+				<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+				12.0pt;margin-left:0cm;text-align:justify'><span lang=EN-GB><span
+				style='mso-spacerun:yes'> </span></span></p>
+
+				<h2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+				0cm;text-align:justify'><a name="_w2jjzdf3xw7x"></a><span lang=EN-GB>Judging
+				the entries </span></h2>
+
+				<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+				0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+				-18.0pt;mso-list:l6 level1 lfo6'><![if !supportLists]><span lang=EN-GB><span
+				style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>Each participant must create a <span
+				class=SpellE>CodaLab</span> account to register. Only one account per user is
+				allowed.</span></p>
+
+				<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
+				-18.0pt;mso-list:l6 level1 lfo6'><![if !supportLists]><span lang=EN-GB><span
+				style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>Evaluation criteria will be
+				used to define the <span class=SpellE>overal</span> winner. Best results =
+				winners. However only participants who <span class=SpellE>adhore</span> to the
+				bottom mentioned conditions will be considered eligible for receiving the <span
+				class=GramE>open source</span> monetary prizes 1st and 2nd place.</span></p>
+
+				<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
+				-18.0pt;mso-list:l6 level1 lfo6'><![if !supportLists]><span lang=EN-GB><span
+				style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>To receive the <span
+				class=SpellE>monterey</span> prize the top runners must:</span></p>
+
+				<p class=MsoNormal style='margin-left:72.0pt;text-align:justify;text-indent:
+				-18.0pt;mso-list:l6 level2 lfo6'><![if !supportLists]><span lang=EN-GB><span
+				style='mso-list:Ignore'>&#9675;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>Deliver to the Competition
+				Organizer the final model’s software code (training and inference code) as used
+				to generate the winning submission and associated documentation written in
+				English. The delivered software code must be capable of generating the winning
+				submission and contain a description of resources required to build and/or run
+				the executable code successfully. Their code will be tested <span class=SpellE>internaly</span>
+				on hidden for the participants validation dataset.</span></p>
+
+				<p class=MsoNormal style='margin-left:72.0pt;text-align:justify;text-indent:
+				-18.0pt;mso-list:l6 level2 lfo6'><![if !supportLists]><span lang=EN-GB><span
+				style='mso-list:Ignore'>&#9675;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>To receive the <span
+				class=SpellE>monterey</span> prize the top runners must also deliver the
+				software code well documented.</span></p>
+
+				<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+				margin-left:72.0pt;text-align:justify;text-indent:-18.0pt;mso-list:l6 level2 lfo6'><![if !supportLists]><span
+				lang=EN-GB><span style='mso-list:Ignore'>&#9675;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span><![endif]><span lang=EN-GB>Must agree for their git and
+				report to be submitted open source for the community to benefit.</span></p>
+		<!-- /Container -->
+	</div>		
+	</div>
+	
+	<div id="schedule" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Schedule</h2>     
+				</div>
+				Comming soon <br>
+				Competition details will be pushish on Monday 20 June 202
+				</div>
+		<!-- /Container -->
+	</div>		
+	</div>
+	
+	<div id="team" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Organization committee</h2>     
+				</div>
+				Comming soon <br>
+				Competition details will be pushish on Monday 20 June 202
+				</div>
+		<!-- /Container -->
+	</div>		
+	</div>
+	
+	<div id="prizes" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Prizes</h2>     
+				</div>
+				Comming soon <br>
+				Competition details will be pushish on Monday 20 June 202
+				</div>
+		<!-- /Container -->
+	</div>		
+	</div>
+	
+	
+	
+		
+	<div id="ref" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">References</h2>     
+				</div>
+				Comming soon <br>
+				Competition details will be pushish on Monday 20 June 202
+				</div>
+		<!-- /Container -->
+	</div>		
+	</div>
+	
+
+		
+			  
+		</div>
+		<!-- /Container -->
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Footer -->
+	
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<!-- <div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div> -->
+	<!-- /Preloader -->
+
+	<!-- jQuery Plugins -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/plugins.js"></script>
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	
+	<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+	<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/particles.js"></script>	
+	<script src="js/app.js"></script>
+
+<!-- Start of counter Code -->
+<!--you can put some website tracker/counter code (eg Statcounter, Google Analytics) here if you're interested in tracking the activity on your website. -->
+<!-- End of counter Code -->
+
+</body>
+
+</html>
